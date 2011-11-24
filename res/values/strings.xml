@@ -1597,4 +1597,7 @@
     <!-- Text for the onscreen "Blacklist" button -->
     <string name="onscreenBlacklistText">Blacklist</string>
 
+    <string name="phone_number_label">My phone number</string>
+    <string name="phone_number_summary">Set the phone number for this device</string>
+    <string name="msisdn_alpha_tag" translatable="false">Voice Line 1</string>
 </resources>
