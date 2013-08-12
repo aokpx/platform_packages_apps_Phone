@@ -1248,29 +1248,6 @@ public class CallNotifier extends Handler
             final Phone phone = c.getCall().getPhone();
             final boolean isEmergencyNumber =
                     PhoneNumberUtils.isLocalEmergencyNumber(number, mApplication);
-            // Set the "type" to be displayed in the call log (see constants in CallLog.Calls)
-            final int callLogType;
-            if (c.isIncoming()) {
-                if (cause == Connection.DisconnectCause.INCOMING_REJECTED) {
-                    callLogType = Calls.REJECTED_TYPE;
-                } else { 
-                    if (cause == Connection.DisconnectCause.INCOMING_MISSED) {
-                        callLogType = Calls.MISSED_TYPE;
-                    } else {
-                        callLogType = Calls.INCOMING_TYPE;
-                    }
-                }
-            } else {
-                callLogType = Calls.OUTGOING_TYPE;
-            }
-            if (VDBG) log("- callLogType: " + callLogType + ", UserData: " + c.getUserData());
-
-
-            {
-                final CallerInfo ci = getCallerInfoFromConnection(c);  // May be null.
-                final String logNumber = getLogNumber(c, ci);
-
-                if (DBG) log("- onDisconnect(): logNumber set to: " + /*logNumber*/ "xxxxxxx");
 
             if (phone.getPhoneType() == PhoneConstants.PHONE_TYPE_CDMA) {
                 if ((isEmergencyNumber)
